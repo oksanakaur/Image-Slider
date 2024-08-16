@@ -8,6 +8,9 @@ let index = 0;
 thumbs.forEach((thumb, ind) => {
     thumb.addEventListener('click', () => {
 
+         document.querySelector(".thumb .selected").classList.remove("selected");
+         thumb.classList.add("selected");
+
         index = ind;
 
         infoSlider.forEach(slide => {
