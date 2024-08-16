@@ -23,10 +23,12 @@
     display: flex;
     align-items: center;
     z-index: 1;
+    overflow: hidden;
 }
 
 .info-box .info-slider {
     height: inherit;
+    translate: .5s ease;
 }
 
 .info-slider .info-item {
@@ -35,6 +37,7 @@
     flex-direction: column;
     justify-content: center;
     color: #fff;
+    transform: translateY(calc(var(--i) * 100%));
 }
 
 .info-item h2 {
@@ -71,11 +74,13 @@
    height: 700px;
    display: flex;
    align-items: center; 
+   overflow: hidden;
 }
 
 .img-box .img-slider {
     width: inherit;
     height: inherit;
+    transition: .5s ease;
 }
 
 .img-slider .img-item {
@@ -84,6 +89,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transform: translateX(calc(var(--i) * 100%));
+}
+
+.img-item img {
+    pointer-events: none;
+    transform: scale(0);
+    transition: .5 ease;
+}
+
+.item.active .img-item img {
+    transform: scale(1);
 }
 
 .thumb {
